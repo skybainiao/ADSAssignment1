@@ -6,9 +6,9 @@ public class LinkedList<T> implements List<T>
   private Node<T> head;
   private int size;
 
-  public LinkedList(Node<T> head,int size){
-    this.head=head;
-    this.size=size;
+  public LinkedList(){
+    this.head=null;
+    this.size=0;
   }
 
   @Override public boolean isEmpty()
@@ -32,14 +32,8 @@ public class LinkedList<T> implements List<T>
 
   @Override public T removeFirst() throws EmptyStackException
   {
-    try
-    {
-      head = head.getNext();
-      size--;
-    }
-    catch (EmptyStackException e){
-      e.getMessage();
-    }
-    return head.getData();
+    Node<T> firstNode = head;
+    head = firstNode.getNext();
+    return firstNode.getData();
   }
 }

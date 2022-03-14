@@ -2,11 +2,8 @@ import java.util.EmptyStackException;
 
 public class LinkedStack<T> implements Stack<T>
 {
-  private LinkedList<T> list;
+  private LinkedList<T> list = new LinkedList<>();
 
-  public LinkedStack(LinkedList<T> list){
-    this.list=list;
-}
 
   @Override public boolean isEmpty()
   {

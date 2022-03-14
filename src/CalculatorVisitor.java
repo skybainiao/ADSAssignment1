@@ -3,7 +3,7 @@ import java.lang.reflect.MalformedParametersException;
 public class CalculatorVisitor implements Visitor,Calculator
 
 {
-  private LinkedStack<Token> tokenStack;
+  private LinkedStack<Token> tokenStack = new LinkedStack<>();
 
 
   public void pushOperand(Operand operand){
