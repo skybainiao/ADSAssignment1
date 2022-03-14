@@ -11,10 +11,8 @@ public class CalculatorVisitor implements Visitor,Calculator
   }
 
 
-  public void performOperation(Operator operator)
-      throws  MalformedExpressionException
+  public void performOperation(Operator operator) throws  MalformedExpressionException
   {
-
     Operand firstOperand = (Operand) tokenStack.pop();
     Operand secondOperand = (Operand) tokenStack.pop();
     if (firstOperand != null || secondOperand != null) {
