@@ -11,7 +11,8 @@ public class CalculatorVisitor implements Visitor,Calculator
   }
 
 
-  public void performOperation(Operator operator)throws MalformedParametersException
+  public void performOperation(Operator operator)
+      throws  MalformedExpressionException
   {
 
     Operand firstOperand = (Operand) tokenStack.pop();
@@ -38,13 +39,13 @@ public class CalculatorVisitor implements Visitor,Calculator
       tokenStack.push(operand);
     }
     else{
-      throw new MalformedParametersException("There is not enough operands");
+      throw new MalformedExpressionException("There is not enough operands");
     }
 
   }
 
 
-  @Override public int getResult() throws MalformedParametersException
+  @Override public int getResult() throws MalformedExpressionException
   {
     Operand operand = (Operand) tokenStack.pop();
     return operand.getValue();
@@ -59,6 +60,7 @@ public class CalculatorVisitor implements Visitor,Calculator
 
 
   @Override public void visit(Operator operator)
+      throws MalformedExpressionException
   {
     performOperation(operator);
 

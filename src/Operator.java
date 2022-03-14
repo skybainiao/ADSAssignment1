@@ -13,6 +13,7 @@ public class Operator extends Token
   }
 
   @Override public void accept(CalculatorVisitor visitor)
+      throws MalformedExpressionException
   {
     visitor.visit(this);
   }

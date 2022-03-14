@@ -7,13 +7,15 @@ public class Client
 
   private Token token;
 
-  public Client(CalculatorVisitor visitor,Token token){
+  public Client(CalculatorVisitor visitor){
     this.visitor=visitor;
-    this.token=token;
+
   }
 
 
-  public int evaluateExpression(ArrayList<Token> tokens){
+  public int evaluateExpression(ArrayList<Token> tokens)
+      throws MalformedExpressionException
+  {
     for (Token token : tokens)
     {
       token.accept(visitor);
