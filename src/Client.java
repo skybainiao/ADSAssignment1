@@ -13,8 +13,7 @@ public class Client
   }
 
 
-  public int evaluateExpression(ArrayList<Token> tokens)
-      throws MalformedExpressionException
+  public int evaluateExpression(ArrayList<Token> tokens) throws MalformedExpressionException
   {
     for (Token token : tokens)
     {
