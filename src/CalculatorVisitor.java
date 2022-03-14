@@ -19,19 +19,17 @@ public class CalculatorVisitor implements Visitor,Calculator
       int firstValue = firstOperand.getValue();
       int secondValue = secondOperand.getValue();
       int result = 0;
-      switch (operator.getOperation()) {
-        case plus:
-          result = firstValue + secondValue;
-          break;
-        case minus:
-          result = firstValue - secondValue;
-          break;
-        case divide:
-          result = firstValue / secondValue;
-          break;
-        case multiply:
-          result = firstValue * secondValue;
-          break;
+      if (operator.getOperation().equals(Operation.plus)){
+        result = firstValue + secondValue;
+      }
+      else if (operator.getOperation().equals(Operation.minus)){
+        result = firstValue - secondValue;
+      }
+      else if (operator.getOperation().equals(Operation.divide)){
+        result = firstValue / secondValue;
+      }
+      else if (operator.getOperation().equals(Operation.multiply)){
+        result = firstValue * secondValue;
       }
       Operand operand = new Operand(this, result);
       tokenStack.push(operand);
