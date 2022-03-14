@@ -1,5 +1,3 @@
-import java.lang.reflect.MalformedParametersException;
-
 public class CalculatorVisitor implements Visitor,Calculator
 
 {
@@ -15,6 +13,7 @@ public class CalculatorVisitor implements Visitor,Calculator
   {
     Operand firstOperand = (Operand) tokenStack.pop();
     Operand secondOperand = (Operand) tokenStack.pop();
+
     if (firstOperand != null || secondOperand != null) {
       int firstValue = firstOperand.getValue();
       int secondValue = secondOperand.getValue();

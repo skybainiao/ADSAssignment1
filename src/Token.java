@@ -8,7 +8,6 @@ public abstract class Token
     this.visitor=visitor;
   }
 
-  public abstract void accept(CalculatorVisitor visitor)
-      throws MalformedExpressionException;
+  public abstract void accept(CalculatorVisitor visitor) throws MalformedExpressionException;
 
 }
